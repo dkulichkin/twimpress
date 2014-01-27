@@ -27,14 +27,14 @@ To install Twimpress follow these steps:
   1. Clone it and run <code>npm install</code> to grab Node's dependencies
   2. Run <code>bower install</code> to pull all the front-end components
   3. Assure you've got your TGC running and start a data provider server script: <code>node neurosocketserver</code>. This should start an http server and web socket on the port 8080. Note that connecting to TGC doesn't happen at this moment but takes place only after client's connection from the step below. In a case of getting any complications at this point follow to a page of the <a href="https://github.com/dkulichkin/mindset-js-binary-parser" target="_blank">mindset-js-binary-parser</a> module.
-  4. On the separate shell's tab Run the client environment by <code>grunt server</code>. This should run the client server on the port 9000 and automatically open the browser. The repository becomes to be under live reload mode, watching and reacting to all changes been made.
+  4. On the separate shell's tab run the client environment by <code>grunt server</code>. This should run the client server on the port 9000 and automatically open the browser. The repository becomes to be under live reload mode, watching and reacting to all changes been made.
   5. After client will establish a web socket handshake the serial port will be opened, and blue indicator on the headset should start lighting up with no blinking. As soon as a signal's quality will be 100% (green icon) the data should start reflecting a stream on the charts and provider's shell tab.
 
 
 Notices
 =========
 
-To proceed to tweets evaluation tab you should sign in and grant an access to TweetsEvaluator app to use your account for triggering Twitter's API (a standard workflow assumed now by Twitter). Thus due to Twimpress's open source license you've got an access to its consumer key and secret. I encourage you create your own Twitter app and substitute these keys with your appropriate own ones.
+To proceed to tweets evaluation tab you should sign in and grant an access to TweetsEvaluator app to use your account for triggering Twitter's API (a standard workflow assumed now by Twitter). Thus due to Twimpress's open source license you've got an access to its consumer key and secret. I encourage you to create your own Twitter app and substitute these keys with your appropriate own ones.
 
 This project has been considered in demonstrational purposes only so I do not plan to develop it somehow further. However I appreciate any tips and comments and opened to assist you with some related demands.
 
