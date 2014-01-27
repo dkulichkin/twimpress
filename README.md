@@ -15,20 +15,20 @@ Architecture and installation
 
 Twimpress was seeded on the top of <a href="http://yeoman.io/" target="_blank">Yeoman</a> <a href="https://github.com/yeoman/generator-angular" target="_blank">Angular generator</a>, following Coffeescript syntax on its front-end part. From the other hand a provider of the data via TCP socket is ran via separate nodejs process under Neurosocketserver.js. All dependencies are grabbed via Nodejs package mannager and Bower. Overall here's the full list of technologies been used:
 
-    1. Angularjs (Coffeescript-style, based on Yeoman's generator)
-    2. Express.js (for trigerring Twitter API and opening TCP socket to ThinkGear Connector utility)
-    3. Socket.io (for transferring data from back-end)
-    4. Twitter bootstrap 2
-    5. Sass, Compass
-    6. Highcharts
+  1. Angularjs (Coffeescript-style, based on Yeoman's generator)
+  2. Express.js (for trigerring Twitter API and opening TCP socket to ThinkGear Connector utility)
+  3. Socket.io (for transferring data from back-end)
+  4. Twitter bootstrap 2
+  5. Sass, Compass
+  6. Highcharts
 
 To install Twimpress follow these steps:
 
-    1. Clone it and run <code>npm install</code> to grab Node's dependencies
-    2. Run <code>bower install</code> to pull all the front-end components
-    3. Assure you've got your TGC running and start a data provider server script: <code>node neurosocketserver</code>. This should start an http server and web socket on the port 8080. Note that connecting to TGC doesn't happen at this moment but takes place only after client's connection from the step below. In a case of getting any complications at this point follow to a page of the <a href="https://github.com/dkulichkin/mindset-js-binary-parser" target="_blank">mindset-js-binary-parser</a> module.
-    4. On the separate shell's tab Run the client environment by <code>grunt server</code>. This should run the client server on the port 9000 and automatically open the browser. The repository becomes to be under live reload mode, watching and reacting to all changes been made.
-    5. After client will establish a web socket handshake the serial port will be opened, and blue indicator on the headset should start lighting up with no blinking. As soon as a signal's quality will be 100% (green icon) the data should start reflecting a stream on the charts and provider's shell tab.
+  1. Clone it and run <code>npm install</code> to grab Node's dependencies
+  2. Run <code>bower install</code> to pull all the front-end components
+  3. Assure you've got your TGC running and start a data provider server script: <code>node neurosocketserver</code>. This should start an http server and web socket on the port 8080. Note that connecting to TGC doesn't happen at this moment but takes place only after client's connection from the step below. In a case of getting any complications at this point follow to a page of the <a href="https://github.com/dkulichkin/mindset-js-binary-parser" target="_blank">mindset-js-binary-parser</a> module.
+  4. On the separate shell's tab Run the client environment by <code>grunt server</code>. This should run the client server on the port 9000 and automatically open the browser. The repository becomes to be under live reload mode, watching and reacting to all changes been made.
+  5. After client will establish a web socket handshake the serial port will be opened, and blue indicator on the headset should start lighting up with no blinking. As soon as a signal's quality will be 100% (green icon) the data should start reflecting a stream on the charts and provider's shell tab.
 
 
 Notices
