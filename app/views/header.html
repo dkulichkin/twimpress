@@ -1,0 +1,20 @@
+<div ng-controller="HeaderCtrl" class="navbar navbar-inverse navbar-static-top">
+  <div class="navbar-inner">
+    <div class="container">
+      <ul class="nav pull-left">
+        <li ng-class="{'active':getClass('/')}">
+          <a ng-href="#/"><i class="fa fa-home"></i> Home</a>
+        </li>
+        <li ng-class="{'active':getClass('/evaluateTweets')}">
+          <a ng-href="#/evaluateTweets"><i class="fa fa-twitter"></i> Evaluate Tweets</a>
+        </li>
+      </ul>
+      <ul class="nav pull-right connection-status">
+        <li twitter-signin class="twitter-signin"></li>
+        <li class="space">Port status: {{socketStatus}}</li>
+        <li class="space">Signal: <span signal="{{poorSignal}}">&nbsp;</span></li>
+      </ul>
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</div>

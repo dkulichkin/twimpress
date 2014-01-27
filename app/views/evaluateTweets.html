@@ -1,0 +1,63 @@
+<!-- Search form -->
+<div class="well tweets-search-container" ng-show="!evaluationStarted && !showResults">
+  <form class="form-horizontal tweets-search-form">
+    <div class="input-append">
+      <input type="text" class="search-input input-xxlarge" placeholder="{{inputPlaceHolder}}" ng-model="searchTerm" ng-disabled="!isUserSigned"/>
+      <button class="btn btn-primary btn-large" ng-click="doSearch()" ng-bind-html="searchButtonText" ng-disabled="!isUserSigned"></button>
+    </div>
+  </form>
+</div>
+
+<!-- Evaluation dashboard -->
+<div class="row top-margin" ng-show="evaluationStarted">
+  <div class="span3 well">
+    <gaugechart title="Attention" color="#DC143C" value="attention" height="220"></gaugechart>
+  </div>
+  <div class="span8">
+    <div class="well user-container">
+      <div class="row">
+        <div class="span1"><img ng-src="{{currentUser.profile_image_url}}"/></div>
+        <div class="span5">
+          <p class="name"><a ng-href="http://twitter.com/{{currentUser.screen_name}}"><strong>{{currentUser.name}}</strong></a></p>
+          <p><small>{{currentUser.description}}</small></p>
+          <div class="row">
+            <div class="span2"><b>Followers:</b> {{currentUser.followers_count}}</div>
+            <div class="span2"><b>Following:</b> {{currentUser.friends_count}}</div>
+          </div>
+        </div>
+      </div>
+      <div class="progress progress-success progress-striped evaluation-bar active">
+        <div class="bar" style="{{evaluationBarLevel | setHeightCss}}"></div>
+      </div>
+    </div>
+    <div class="well top-margin">
+      <table class="table table-striped tweets-table">
+        <tr class="animate-repeat" ng-repeat="tweet in currentUser.tweets">
+          <td>
+            <p>
+              <div class="pull-right tweet-date"><small ng-bind="getDate(tweet.created_at) | date:'MMM d, y'"></small></div>
+              <small ng-bind-html="tweet.text | entities:tweet.entities"></small>
+            </p>
+          </td>
+        </tr>
+      </table>
+    </div>
+  </div>
+</div>
+
+<!-- Results -->
+<div ng-show="showResults" class="show-results">
+    <ul>
+      <li ng-repeat="user in Users" class="row top-margin well user-container" ng-class="user.evaluationFinishedClass + '-report'">
+        <div class="span1"><img ng-src="{{user.profile_image_url}}"/></div>
+        <div class="span5">
+          <p class="name"><a ng-href="http://twitter.com/{{currentUser.screen_name}}"><strong>{{user.name}}</strong></a></p>
+          <p><small>{{user.description}}</small></p>
+          <div class="row">
+            <div class="span3"><b>Average attention:</b> {{user.averageAttention}}</div>
+          </div>
+        </div>
+      </li>
+    </ul>
+    <button ng-click="backToNewSearch()" class="btn btn-large">Start new search</button>
+</div>

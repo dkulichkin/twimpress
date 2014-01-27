@@ -1,0 +1,175 @@
+@import "compass/utilities/sprites";
+@import "connection/*.png";
+
+$successFontColor: #468847;
+$errorFontColor: #b94a48;
+$successBackgroundColor: #dff0d8;
+$errorBackgroundColor: #f2dede;
+
+body {
+  background: url(../images/bg.jpg) center top no-repeat fixed;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  color: #333;
+}
+
+.nav li {
+  height: 20px;
+}
+
+li.space {
+  margin-left: 30px;
+  @include all-connection-sprites;
+}
+
+.navbar .btn.btn-signin {
+  margin-top: 0;
+}
+
+.top-margin {
+  margin-top: 20px;
+}
+
+.signal-status {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  margin-left: 5px;
+}
+
+input.search-input {
+  height: 34px;
+  font-size: 20px;
+  line-height: 34px;
+}
+
+.tweets-search-form {
+  margin-bottom: 0;
+  text-align: center;
+}
+
+.tweets-search-container {
+  margin: -42px 0 0 -340px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  padding: 19px;
+}
+
+.connection-status {
+  line-height: 20px;
+  padding: 10px 15px;
+  color: #FFF;
+  font-size: 11px;
+}
+
+.tweet-date {
+  color: #777;
+  font-weight: bold;
+  margin-left: 70px;
+}
+
+.evaluation-bar {
+  transform: rotate(-90deg);
+  transform-origin: right top;
+  width: 100px;
+  position: absolute;
+  height: 10px;
+  right: 30px;
+  top: 19px;
+}
+
+.user-container {
+  position: relative;
+  padding: 19px;
+  &.success {
+    animation: evaluate-success 0.7s infinite;
+    .name a {
+      color: $successFontColor;
+    }
+  }
+  &.error {
+    animation: evaluate-error 0.7s infinite;
+    .name a {
+      color: $errorFontColor;
+    }
+  }
+  .name {
+    text-shadow: 0 1px 0 rgba(255, 255, 255, 0.5);
+  }
+}
+
+.user-container {
+  &.success-report {
+    .name a {
+      color: $successFontColor;
+    }
+    background: $successBackgroundColor;
+  }
+  &.error-report {
+    .name a {
+      color: $errorFontColor;
+    }
+    background: $errorBackgroundColor;
+  }
+}
+
+.twitter-signin {
+  font-weight: bold;
+  color: #5DC8D1;
+}
+
+.profile-img {
+  width: 20px;
+  height: 20px;
+  margin-right: 10px;
+}
+
+.show-results {
+  width: 620px;
+  margin: 70px auto;
+  ul {
+    list-style: none;
+  }
+  button {
+    margin: 50px auto 100px;
+    display: block;
+  }
+}
+
+@keyframes evaluate-success {
+  0%   {background: inherit; }
+  50%   {background: $successBackgroundColor; }
+  100% {background: inherit;}
+}
+
+@keyframes evaluate-error {
+  0%   {background: inherit; }
+  50%   {background: $errorBackgroundColor; }
+  100% {background: inherit;}
+}
+
+.user-container.error .progress,
+.user-container.success .progress {
+  display: none;
+}
+
+/* Tweets Repeater Animation */
+.animate-repeat.ng-enter,
+.animate-repeat.ng-leave {
+  transition: 400ms cubic-bezier(0.250, 0.250, 0.750, 0.750) all;
+  position: relative;
+  display: block;
+}
+
+.animate-repeat.ng-leave.ng-leave-active,
+.animate-repeat.ng-enter {
+  transform: rotateX(120deg) rotateZ(120deg);
+  opacity: 0;
+}
+
+.animate-repeat.ng-enter.ng-enter-active,
+.animate-repeat.ng-leave {
+  transform: rotateX(0deg) rotateZ(0deg);
+  opacity: 1;
+}
+

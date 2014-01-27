@@ -1,0 +1,10 @@
+{
+  "version": 3,
+  "file": "setHeightCss.js",
+  "sourceRoot": "",
+  "sources": [
+    "setHeightCss.coffee"
+  ],
+  "names": [],
+  "mappings": ";AAAA;CAAA,CAAA,UAAA;CAAA,CAEA,CAC0B,GAD1B,CAAO,EACmB,KAD1B;GAEI,EAAA,IAAC,EAAD;CAAA,EACW,EAAR,IAAA,IAAA;CAFmB,IACtB;CAFJ,EAC0B;CAH1B"
+}
