@@ -36,6 +36,8 @@ Notices
 
 To proceed to tweets evaluation tab you should sign in and grant an access to TweetsEvaluator app to use your account for triggering Twitter's API (a standard workflow assumed now by Twitter). Thus due to Twimpress's open source license you've got an access to its consumer key and secret. I encourage you create your own Twitter app and substitute these keys with your appropriate own ones.
 
+This project has been considered in demonstrational purposes only so I do not plan to develop it somehow further. However I appreciate any tips and comments and opened to assist you with some related demands.
+
 
 Demonstrational Video
 =========
